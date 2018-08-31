@@ -185,13 +185,16 @@ function validateHsl(HSL) {
 }
 
 function display_hex(ry){
-  return "#" + ry[0] + ry[1] + ry[2];
+  var hex = "#" + ry[0] + ry[1] + ry[2];
+  if(validateHex(hex)){return hex;}else{return false;}
 }
 
 function display_rgb(ry){
-  return "rgb(" + Math.round(ry[0]) +","+  Math.round(ry[1]) +","+  Math.round(ry[2]) + ")";
+  var rgb = "rgb(" + Math.round(ry[0]) +","+  Math.round(ry[1]) +","+  Math.round(ry[2]) + ")";
+  if(validateRgb(rgb)){return rgb;}else{return false;}
 }
 
 function display_hsl(ry){
-  return "hsl(" +  Math.round(ry[0]) +","+  Math.round(ry[1]) +"%,"+  Math.round(ry[2]) + "%)";
+  var hsl = "hsl(" +  Math.round(ry[0]) +","+  Math.round(ry[1]) +"%,"+  Math.round(ry[2]) + "%)";
+  if(validateHsl(hsl)){return hsl;}else{return false;}
 }
